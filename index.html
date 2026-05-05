@@ -732,15 +732,16 @@
             <input type="number" id="f8" value="0" oninput="clampFlexi('f8');calculate()"></div>
         </div>
         <!-- Item 9: LTA (Old Regime only) -->
-        <div class="flexi-item-row lta-row" id="row_lta">
+    <div class="flexi-item-row lta-row" id="row_lta">
           <div>
             <div class="flexi-item-name">✈️ LTA — Leave Travel Assistance</div>
-            <div style="font-size:10px;color:var(--text3);margin-top:2px;">Old Regime only · Up to 1 month Basic</div>
+            <div style="font-size:10px;color:var(--text3);margin-top:2px;">Old Regime only · Max = 1 month Basic · <span id="lta_max_hint">enter gross first</span></div>
           </div>
-          <div></div>
-          <div class="lta-static" id="lta_display">₹0</div>
+          <div class="flexi-item-cap" id="cap_lta">Max ₹0</div>
+          <div class="input-wrap" style="width:82px;"><span class="input-prefix">₹</span>
+            <input type="number" id="f_lta" value="" placeholder="0" oninput="clampLTA();calculate()"></div>
         </div>
-
+ 
         <div class="flexi-total-bar">
           <span class="flexi-total-label">Total Tax-Free Claims (Annual) — both regimes</span>
           <span class="flexi-total-val" id="flexiTotal">₹0</span>
