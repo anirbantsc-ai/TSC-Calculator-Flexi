@@ -82,6 +82,24 @@
     white-space: nowrap;
     align-self: center;
   }
+  .download-btn {
+    background: linear-gradient(135deg, var(--accent), #5b6fff);
+    border: none;
+    border-radius: var(--radius2);
+    padding: 9px 20px;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: center;
+    transition: opacity 0.2s;
+  }
+  .download-btn:hover { opacity: 0.85; }
 
   /* GRID LAYOUT */
   .main-grid {
@@ -572,12 +590,6 @@
     </div>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
       <div class="badge-fy">FY 2026–27</div>
-      <button class="download-btn" onclick="downloadHTML()">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M8 2v8M5 7l3 3 3-3M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1"/>
-        </svg>
-        Download
-      </button>
     </div>
   </div>
 
@@ -1208,6 +1220,14 @@ function calculate() {
   }
 }
 
+function downloadHTML() {
+  const html = document.documentElement.outerHTML;
+  const blob = new Blob([html], {type: 'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'TSC_Tax_Regime_Calculator_FY2026-27.html';
+  a.click();
+}
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 applyGradeLimits();
