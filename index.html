@@ -1208,14 +1208,6 @@ function calculate() {
   }
 }
 
-function downloadHTML() {
-  const html = document.documentElement.outerHTML;
-  const blob = new Blob([html], {type: 'text/html'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'TSC_Tax_Regime_Calculator_FY2026-27.html';
-  a.click();
-}
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 applyGradeLimits();
